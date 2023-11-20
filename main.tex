@@ -1,0 +1,93 @@
+%% start of file `template.tex'.
+%% Copyright 2006-2015 Xavier Danaux (xdanaux@gmail.com).
+%
+% This work may be distributed and/or modified under the
+% conditions of the LaTeX Project Public License version 1.3c,
+% available at http://www.latex-project.org/lppl/.
+
+
+\documentclass[11pt,a4paper]{moderncv}        % possible options include font size ('10pt', '11pt' and '12pt'), paper size ('a4paper', 'letterpaper', 'a5paper', 'legalpaper', 'executivepaper' and 'landscape') and font family ('sans' and 'roman')
+\usepackage{ascii}
+
+% moderncv themes
+\moderncvstyle{casual}                             % style options are 'casual' (default), 'classic', 'banking', 'oldstyle' and 'fancy'
+\moderncvcolor{blue}                               % color options 'black', 'blue' (default), 'burgundy', 'green', 'grey', 'orange', 'purple' and 'red'
+\renewcommand{\familydefault}{\sfdefault}         % to set the default font; use '\sfdefault' for the default sans serif font, '\rmdefault' for the default roman one, or any tex font name
+%\nopagenumbers{}                                  % uncomment to suppress automatic page numbering for CVs longer than one page
+
+% character encoding
+\usepackage[utf8]{inputenc}                 
+% if you are not using xelatex ou lualatex, replace by the encoding you are using
+
+
+% adjust the page margins
+\usepackage[scale=0.75]{geometry}
+%\setlength{\hintscolumnwidth}{3cm}                % if you want to change the width of the column with the dates
+%\setlength{\makecvtitlenamewidth}{10cm}           % for the 'classic' style, if you want to force the width allocated to your name and avoid line breaks. be careful though, the length is normally calculated to avoid any overlap with your personal info; use this at your own typographical risks...
+
+% personal data
+\name{Niccol\`o}{Laurenti}
+%\title{Resumé title}                               % optional, remove / comment the line if not wanted
+% \address{Via Leonida Rech, 80}{00156}{Roma (RM), Italia}% optional, remove / comment the line if not wanted; the "postcode city" and "country" arguments can be omitted or provided empty
+\phone[mobile]{+39~338 2971956}                   % optional, remove / comment the line if not wanted; the optional "type" of the phone can be "mobile" (default), "fixed" or "fax"
+%\phone[fixed]{+2~(345)~678~901}
+%\phone[fax]{+3~(456)~789~012}
+\email{niccolo.laurenti@mi.infn.it}
+% \homepage{davidemorgante.github.io}                       % optional, remove / comment the line if not wanted
+% \social[linkedin]{davide-morgante}                        % optional, remove / comment the line if not wanted
+%\social[twitter]{jdoe}                             % optional, remove / comment the line if not wanted
+%\social[github]{jdoe}                              % optional, remove / comment the line if not wanted
+%\extrainfo{additional information}                 % optional, remove / comment the line if not wanted
+% \photo[100pt][0.3pt]{picture.jpg}                       % optional, remove / comment the line if not wanted; '64pt' is the height the picture must be resized to, 0.4pt is the thickness of the frame around it (put it to 0pt for no frame) and 'picture' is the name of the picture file
+%\quote{Some quote}                                 % optional, remove / comment the line if not wanted
+
+% bibliography adjustements (only useful if you make citations in your resume, or print a list of publications using BibTeX)
+%   to show numerical labels in the bibliography (default is to show no labels)
+\makeatletter\renewcommand*{\bibliographyitemlabel}{\@biblabel{\arabic{enumiv}}}\makeatother
+%   to redefine the bibliography heading string ("Publications")
+%\renewcommand{\refname}{Articles}
+\title{Research Statement}
+% bibliography with mutiple entries
+%\usepackage{multibib}
+%\newcites{book,misc}{{Books},{Others}}
+%----------------------------------------------------------------------------------
+%            content
+%----------------------------------------------------------------------------------
+\begin{document}
+
+\makecvtitle
+
+Starting with my master thesis and during my Ph.D. my studies focused on phenomenological aspects of high energy physics and in particular on the theory describing strong interactions,
+i.e./ Quantum Chromodynamics (QCD).
+\textcolor{red}{Computational tools??}
+
+\section{Construction of an N$^3$LO DIS scheme}
+
+During my Master Thesis, under the supervision of Dr.\ Marco Bonvini and in collaboration with another Master student, I worked on the development of a
+so-called variable flavor number scheme (VFNS) for deep-inelasic-scattering (DIS) predictions at next-to-next-to-next-to-leading order (N$^3$LO) in perturbation theory.
+This is needed to correctly consider the heavy quarks mass effects when computing the electron-proton scattering, whose understanding is crucial in PDFs fit.
+Different proposal exist in the literature and they are all equivalent at all order in perturbation theory but differ at any given order.
+Moreover, in contrast with the available schemes, our construction takes into account the fact that the heavy quark PDFs are generated perturbatively.
+
+Currently, the ingredients needed for such a construction are completely known up to NNLO in perturbation theory, while at N$^3$LO there are still some missing informations.
+The bulk of the work I did during my Master thesis was to construct an approximation of the unknown terms of the N$^3$LO partonic cross section for DIS
+(the so-called coefficient functions) by combining some known limits. In this way it was possible to construct a VFNS at approximate N$^3$LO.
+
+During this work I 
+
+% This is of great importance in phenomenological studies of DIS, that are crucial for the extraction of PDFs from experimental data.
+% Indeed, in DIS, contrary to proton-proton collision, involve only one proton and therefore depend only on one PDF.
+% For this reason they provide a very stong contraint on the fit.
+% It follows that a very precise theoretical understanding of DIS is fundamental for the fits of PDF, which enter in the theory predictions
+% for every process in hadronic collisions.
+
+\section{PDFs fit}
+
+% During my Ph.D./ I worked within the NNPDF collaboration on PDFs fits.
+% As I discussed in the previous section, this is of crucial importance for any theoretical predictions in hardonic collision, like the ones happening at the LHC.
+
+
+
+\end{document}
+
+
