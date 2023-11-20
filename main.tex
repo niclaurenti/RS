@@ -45,10 +45,11 @@
 %   to show numerical labels in the bibliography (default is to show no labels)
 \makeatletter\renewcommand*{\bibliographyitemlabel}{\@biblabel{\arabic{enumiv}}}\makeatother
 %   to redefine the bibliography heading string ("Publications")
-%\renewcommand{\refname}{Articles}
+\renewcommand{\refname}{References}
 \title{Research Statement}
 % bibliography with mutiple entries
 %\usepackage{multibib}
+\bibliographystyle{plain}
 %\newcites{book,misc}{{Books},{Others}}
 %----------------------------------------------------------------------------------
 %            content
@@ -58,22 +59,46 @@
 \makecvtitle
 
 Starting with my master thesis and during my Ph.D. my studies focused on phenomenological aspects of high energy physics and in particular on the theory describing strong interactions,
-i.e./ Quantum Chromodynamics (QCD).
+i.e.\ Quantum Chromodynamics (QCD).
 \textcolor{red}{Computational tools??}
 
 \section{Construction of an N$^3$LO DIS scheme}
 
-During my Master Thesis, under the supervision of Dr.\ Marco Bonvini and in collaboration with another Master student, I worked on the development of a
-so-called variable flavor number scheme (VFNS) for deep-inelasic-scattering (DIS) predictions at next-to-next-to-next-to-leading order (N$^3$LO) in perturbation theory.
-This is needed to correctly consider the heavy quarks mass effects when computing the electron-proton scattering, whose understanding is crucial in PDFs fit.
-Different proposal exist in the literature and they are all equivalent at all order in perturbation theory but differ at any given order.
-Moreover, in contrast with the available schemes, our construction takes into account the fact that the heavy quark PDFs are generated perturbatively.
+During my Master Thesis, under the supervision of Dr.\ Marco Bonvini and in collaboration with another Master student,
+I worked on the development of a so-called variable flavor number scheme (VFNS) for deep-inelasic-scattering (DIS) predictions at
+next-to-next-to-next-to-leading order (N$^3$LO) in perturbation theory.
+This is needed to correctly consider the heavy quarks mass effects when computing the electron-proton scattering, whose understanding
+is crucial in PDFs fit.
+Different proposal exist in the literature and they are all equivalent at all order in perturbation theory but differ at any given
+order in the way the different ingredients are combined.
+Moreover, in contrast with the available schemes, our construction takes into account the fact that the heavy quark PDFs are generated
+perturbatively (this is true in the case in which intrinsic components are neglected, while in the case in which they are not the scheme will
+have to be modified).
 
-Currently, the ingredients needed for such a construction are completely known up to NNLO in perturbation theory, while at N$^3$LO there are still some missing informations.
-The bulk of the work I did during my Master thesis was to construct an approximation of the unknown terms of the N$^3$LO partonic cross section for DIS
-(the so-called coefficient functions) by combining some known limits. In this way it was possible to construct a VFNS at approximate N$^3$LO.
+Currently, the ingredients needed for such a construction are completely known up to NNLO in perturbation theory, while at N$^3$LO
+there are still some missing informations.
+Even though a was also involved in the construction of the scheme, the bulk of the work I did during my Master thesis was to
+construct an approximation of the unknown terms of the N$^3$LO partonic cross section for DIS (the so-called coefficient functions) by
+combining some known limits.
+In this way it was possible to construct a VFNS at approximate N$^3$LO.
 
-During this work I 
+\textcolor{red}{Ho approfondito bla bla bla}
+
+\textcolor{red}{Perch\`e \`e importante?}
+
+As a result of this work two codes where written to produce the results.
+Both of them are now public and open source.
+The first one, \url{https://github.com/niclaurenti/adani}, is a \texttt{C++} code 
+which computes the approximation of the heavy quark coefficient functions at N$^3$LO.
+The reason why the \texttt{C++} language was chosen is that in the N$^3$LO massive coefficient function there are some terms that are
+exactly known but only in numerical form since they are obtained through the integration of the lowest order coefficient functions and
+splitting functions.
+Therefore, a compiled code was more suitable to handle the heavy integrals that are required to be computed.
+
+Then a \texttt{Python} code, \url{https://github.com/andreab1997/DIS_TP}, whose aim is to combine the different ingredients to actually
+compute the theory predictions with our scheme.
+
+Regarding this work, a publication is in preparation.
 
 % This is of great importance in phenomenological studies of DIS, that are crucial for the extraction of PDFs from experimental data.
 % Indeed, in DIS, contrary to proton-proton collision, involve only one proton and therefore depend only on one PDF.
@@ -83,9 +108,37 @@ During this work I
 
 \section{PDFs fit}
 
-% During my Ph.D./ I worked within the NNPDF collaboration on PDFs fits.
-% As I discussed in the previous section, this is of crucial importance for any theoretical predictions in hardonic collision, like the ones happening at the LHC.
+During my Ph.D.\ I continued with sudy of phenomenology in high energy phisics under the supervision of Prof.\ Stefano Forte.
+In particular I focused on the topic of PDFs fits: PDFs are objects that link the hadronic cross sections, that are what is actually observed
+experimentally, to partonic cross sections, that are what is computed theoretically.
+Being non-perturbative objects, the PDFs cannot be computed in perturbation theory but they must be fitted from data.
+I delved into this subject joining the NNPDF collaboration, where I had the opportunuty to study both the theoretical and the
+computational aspects.
 
+My main project has been the inclusion of Quantum Electrodynamics (QED) effects in PDFs fit.
+The final aim was to provide the QED fit of the NNPDF4.0 series that replaced the old NNPDF3.1QED PDF set.
+In order to achieve it, different things had to be implemented in different codes.
+The first step is the implementation of QED corrections to the PDF evolution equations, i.e.\ the DGLAP equations.
+They are a system of integro-differential equations, whose solution is highly non-trivial. \textcolor{red}{expand a bit}
+The solution of DGLAP equations, in presence of QED effects, has been implemented in the public code \texttt{EKO} (\url{https://github.com/NNPDF/eko}):
+it is a \texttt{Python} code that solves DGLAP equation with the tecnique of Mellin transform, that before I joined the NNPDF collaboration
+was desined to handle only the pure QCD case.
+I extended it also to the QED case. \textcolor{red}{Discuss the steps? i.e.\ find the evolution basis, find the form of DGLAP in this basis,
+mellin transform the splittings, implement them in EKO, find an appropriate solution}
+
+The second step has been the extension of the NNPDF fitting code to consider the presence of a photon PDF.
+Indeed, once we consider QED effects, that means that we allow photons emissions from the quarks inside the proton, we have to consider also
+a photon PDF.
+This is obtained through the LuxQED method~\cite{Manohar:2016nzj, Manohar:2017eqh}, that links it to the quarks and gluon's PDFs
+through a perturbative calculation.
+I interfaced the \texttt{FiatLux} code, that implements the LuxQED formula, with the NNPDF code (\url{https://github.com/NNPDF/nnpdf})
+
+\textcolor{red}{Parlare di N$^3$LO}
+
+\section{Side projects}
+
+% Bibliography
+\bibliography{biblio}
 
 
 \end{document}
