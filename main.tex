@@ -24,14 +24,13 @@
 \usepackage[scale=0.75]{geometry}
 %\setlength{\hintscolumnwidth}{3cm}                % if you want to change the width of the column with the dates
 %\setlength{\makecvtitlenamewidth}{10cm}           % for the 'classic' style, if you want to force the width allocated to your name and avoid line breaks. be careful though, the length is normally calculated to avoid any overlap with your personal info; use this at your own typographical risks...
+% \setlength{\parindent}{1em}
 
 % personal data
 \name{Niccol\`o}{Laurenti}
 %\title{Resumé title}                               % optional, remove / comment the line if not wanted
 % \address{Via Leonida Rech, 80}{00156}{Roma (RM), Italia}% optional, remove / comment the line if not wanted; the "postcode city" and "country" arguments can be omitted or provided empty
-\phone[mobile]{+39~338 2971956}                   % optional, remove / comment the line if not wanted; the optional "type" of the phone can be "mobile" (default), "fixed" or "fax"
-%\phone[fixed]{+2~(345)~678~901}
-%\phone[fax]{+3~(456)~789~012}
+\phone[mobile]{+39~338 2971956}
 \email{niccolo.laurenti@mi.infn.it}
 % \homepage{davidemorgante.github.io}                       % optional, remove / comment the line if not wanted
 % \social[linkedin]{davide-morgante}                        % optional, remove / comment the line if not wanted
@@ -58,33 +57,38 @@
 
 \makecvtitle
 
-Starting with my master thesis and during my Ph.D. my studies focused on phenomenological aspects of high energy physics and in particular on the theory describing strong interactions,
-i.e.\ Quantum Chromodynamics (QCD).
-\textcolor{red}{Computational tools??}
+% Starting with my master thesis and during my Ph.D. my studies focused on phenomenological aspects of high energy physics and in particular on the theory describing strong interactions,
+% i.e.\ Quantum Chromodynamics (QCD).
+% \textcolor{red}{Computational tools??}
+\textcolor{red}{Write intro}
 
 \section{Construction of an N$^3$LO DIS scheme}
 
 During my Master Thesis, under the supervision of Dr.\ Marco Bonvini and in collaboration with another Master student,
 I worked on the development of a so-called variable flavor number scheme (VFNS) for deep-inelasic-scattering (DIS) predictions at
 next-to-next-to-next-to-leading order (N$^3$LO) in perturbation theory.
-This is needed to correctly consider the heavy quarks mass effects when computing the electron-proton scattering, whose understanding
-is crucial in PDFs fit.
+This is needed to correctly consider the heavy quarks mass effects when computing theory predictions electron-proton scattering,
+whose understanding is crucial in PDFs fit.
 Different proposal exist in the literature and they are all equivalent at all order in perturbation theory but differ at any given
 order in the way the different ingredients are combined.
-Moreover, in contrast with the available schemes, our construction takes into account the fact that the heavy quark PDFs are generated
-perturbatively (this is true in the case in which intrinsic components are neglected, while in the case in which they are not the scheme will
-have to be modified).
+What is crucial to discuss is that all of these schemes consider the heavy quark PDF of $\mathcal{O}(\alpha_s^0)$.
+Instead, our construction takes into account the fact that the heavy quark PDFs are generated
+perturbatively and therefore have to be considered of $\mathcal{O}(\alpha_s)$ (this is true in the case in which intrinsic components are neglected, while in the case in which they are not the scheme will
+have to be modified disentangling the intrinsic part from the one perturbatively generated).
 
 Currently, the ingredients needed for such a construction are completely known up to NNLO in perturbation theory, while at N$^3$LO
 there are still some missing informations.
-Even though a was also involved in the construction of the scheme, the bulk of the work I did during my Master thesis was to
+Even though I was also involved in the construction of the scheme, the bulk of the work I did during my Master thesis was to
 construct an approximation of the unknown terms of the N$^3$LO partonic cross section for DIS (the so-called coefficient functions) by
 combining some known limits.
 In this way it was possible to construct a VFNS at approximate N$^3$LO.
 
 \textcolor{red}{Ho approfondito bla bla bla}
 
-\textcolor{red}{Perch\`e \`e importante?}
+This result is important since it allows a better understanding of DIS theoretical predictions on two levels.
+Fist of all our VFNS will allow a more precise treatment of the heavy quark PDF.
+Moreover, the inclusion of the N$^3$LO corrections, even if in an approximate form, allows a better description of the DIS data
+and therefore it will increase the accuracy af the PDFs fits, that are fundamental for every theory prediction in high energy physics.
 
 As a result of this work two codes where written to produce the results.
 Both of them are now public and open source.
@@ -109,29 +113,39 @@ Regarding this work, a publication is in preparation.
 \section{PDFs fit}
 
 During my Ph.D.\ I continued with sudy of phenomenology in high energy phisics under the supervision of Prof.\ Stefano Forte.
-In particular I focused on the topic of PDFs fits: PDFs are objects that link the hadronic cross sections, that are what is actually observed
-experimentally, to partonic cross sections, that are what is computed theoretically.
+In particular I focused on the topic of PDFs fits: PDFs are objects that link the hadronic cross sections,
+that are what is actually observed experimentally, to partonic cross sections, that are what is computed theoretically.
 Being non-perturbative objects, the PDFs cannot be computed in perturbation theory but they must be fitted from data.
-I delved into this subject joining the NNPDF collaboration, where I had the opportunuty to study both the theoretical and the
+Their extraction is a fundamental step in the computation of theory predictions in hadronic collisions, like the ones happening 
+at the LHC, since every observable depends on the PDFs.
+I delved into this subject joining the NNPDF collaboration, where I had the opportunity to study both the theoretical and the
 computational aspects.
 
 My main project has been the inclusion of Quantum Electrodynamics (QED) effects in PDFs fit.
 The final aim was to provide the QED fit of the NNPDF4.0 series that replaced the old NNPDF3.1QED PDF set.
 In order to achieve it, different things had to be implemented in different codes.
+
 The first step is the implementation of QED corrections to the PDF evolution equations, i.e.\ the DGLAP equations.
 They are a system of integro-differential equations, whose solution is highly non-trivial. \textcolor{red}{expand a bit}
-The solution of DGLAP equations, in presence of QED effects, has been implemented in the public code \texttt{EKO} (\url{https://github.com/NNPDF/eko}):
-it is a \texttt{Python} code that solves DGLAP equation with the tecnique of Mellin transform, that before I joined the NNPDF collaboration
-was desined to handle only the pure QCD case.
-I extended it also to the QED case. \textcolor{red}{Discuss the steps? i.e.\ find the evolution basis, find the form of DGLAP in this basis,
-mellin transform the splittings, implement them in EKO, find an appropriate solution}
+The solution of DGLAP equations, in presence of QED effects, has been implemented in the public code \texttt{EKO}
+(\url{https://github.com/NNPDF/eko}), a code written in \texttt{Python} that computes the solution of the DGLAP equation with the
+tecnique of Mellin transform.
+Before I joined the NNPDF collaboration, it could handle only the pure QCD case, but I extended it to consider also QED corrections.
+This passes through various steps: find a PDFs basis that maximally decouple the system, write the DGLAP equations in this basis,
+compute the Mellin transform of the known QED corrections of the splitting functions
+(i.e.\ the $\mathcal{O}(\alpha)$, $\mathcal{O}(\alpha \alpha_s)$ and $\mathcal{O}(\alpha^2)$) and analytically continue them in the complex Mellin space
+and in the end find a suitable numerical solution of the system in Mellin space.
 
-The second step has been the extension of the NNPDF fitting code to consider the presence of a photon PDF.
+The second step has been the extension of the NNPDF fitting code (\url{https://github.com/NNPDF/nnpdf}) to consider the presence of
+a photon PDF.
 Indeed, once we consider QED effects, that means that we allow photons emissions from the quarks inside the proton, we have to consider also
 a photon PDF.
-This is obtained through the LuxQED method~\cite{Manohar:2016nzj, Manohar:2017eqh}, that links it to the quarks and gluon's PDFs
-through a perturbative calculation.
-I interfaced the \texttt{FiatLux} code, that implements the LuxQED formula, with the NNPDF code (\url{https://github.com/NNPDF/nnpdf}).
+This is obtained through the LuxQED method~\cite{Manohar:2016nzj, Manohar:2017eqh}: with this approach the photon PDF is linked through
+a perturbative calculation to the DIS structure functions.
+Since the structure functions themselves depend on the quarks and gluon PDFs, the LuxQED method liks the photon PDF to the ``QCD'' PDFs.
+I interfaced the \texttt{FiatLux} code, a public code written in \texttt{C++} that implements the LuxQED formula, with the NNPDF code.
+In this way the fitting code is able to include the photon contribution in photon initiated processes, DGLAP evolution and momentum sum rules.
+
 
 
 \textcolor{red}{Parlare di N$^3$LO}
