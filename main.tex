@@ -48,7 +48,7 @@
 \title{Research Statement}
 % bibliography with mutiple entries
 %\usepackage{multibib}
-\bibliographystyle{plain}
+\bibliographystyle{unsrt}
 %\newcites{book,misc}{{Books},{Others}}
 %----------------------------------------------------------------------------------
 %            content
@@ -122,7 +122,7 @@ I delved into this subject joining the NNPDF collaboration, where I had the oppo
 computational aspects.
 
 My main project has been the inclusion of Quantum Electrodynamics (QED) effects in PDFs fit.
-The final aim was to provide the QED fit of the NNPDF4.0 series that replaced the old NNPDF3.1QED PDF set.
+The final aim was to produce the QED fit of the NNPDF4.0 series that replaced the old NNPDF3.1QED PDF set.
 In order to achieve it, different things had to be implemented in different codes.
 
 The first step is the implementation of QED corrections to the PDF evolution equations, i.e.\ the DGLAP equations.
@@ -146,11 +146,25 @@ Since the structure functions themselves depend on the quarks and gluon PDFs, th
 I interfaced the \texttt{FiatLux} code, a public code written in \texttt{C++} that implements the LuxQED formula, with the NNPDF code.
 In this way the fitting code is able to include the photon contribution in photon initiated processes, DGLAP evolution and momentum sum rules.
 
+A publication for this work in in preparation and preliminary results were presented in~\cite{LAURENTI2023}.
 
+I was also involved the approximate N$^3$LO PDF determination with the NNPDF4.0 methodology.
+Indeed, almost all the ingredients needed for a PDF fit are exactly known up to NNLO, while at N$^3$LO only partial informations
+are available (this is precisely true only for DIS predictions, as I mentioned in the past section, but not for all the proton-proton
+collision processes whose data are included in the fit).
+The aim of this project was to include the N$^3$LO corrections, using the exact results when available and an approximate one
+for the missing terms.
+I was mainly involved in the implementation of the approximate N$^3$LO massive DIS coefficient functions in the NNPDF code.
+In order to do it, I interfaced the code I discussed about in the past section with the NNPDF code.
+This involves some technical problems like the interface of a \texttt{C++} code with a \texttt{Python} one, or the distribution of
+a compiled package for all possible operative systems. \textcolor{red}{Parte un po' inutile}
 
-\textcolor{red}{Parlare di N$^3$LO}
 
 \section{Side projects}
+
+During my Ph.D.\ I also had the opportunity to work on different side projects.
+
+\cite{laurenti2022approximating}
 
 % Bibliography
 \bibliography{biblio}
