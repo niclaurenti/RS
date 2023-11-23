@@ -57,15 +57,30 @@
 
 \makecvtitle
 
-% Starting with my master thesis and during my Ph.D. my studies focused on phenomenological aspects of high energy physics and in particular on the theory describing strong interactions,
-% i.e.\ Quantum Chromodynamics (QCD).
-% \textcolor{red}{Computational tools??}
-\textcolor{red}{Write intro}
+Starting with my master thesis and then with my Ph.D.\ my research focused on phenomenological aspects of high energy physics (HEP)
+and in particular on the theory describing strong interactions, i.e.\ Quantum Chromodynamics (QCD).
+I am involved in developing methods and computational tools to provide high precision theoretical predictions in HEP.
+This is of fundamental importance since with the start of the high-luminosity era at the LHC, experimental measurements will increase
+their precision.
+Therefore, to effectively compare theory with experiments, theoretical calculations must attain a precision on the order of percent.
+
+In this context, a building block for the theory predictions are the parton distribution functions (PDFs).
+Since they enter in the computation of every hadronic observable, their extraction from experimental data has to be performed 
+with a high accuracy.
+With this aim in mind, the methodogical and computational techniques used in their determination are of fundamental importance.
+Another crucial aspect, is the theoretical description of deep-inelastic-scattering (DIS) data, that provide a very strong constraint
+on the PDF.
+
+My research covered both these aspects:
+on one side I worked in the NNPDF collaboration both on the theory side and as a developer of the NNPDF code to provide computational
+tools that are able to determine PDFs at the percent precision;
+on the other side I worked on a new scheme that can increase the theoretical understanding of DIS predictions, and therefore of the PDFs
+determination.
 
 \section{Construction of an N$^3$LO DIS scheme}
 
 During my Master Thesis, under the supervision of Dr.\ Marco Bonvini and in collaboration with another Master student,
-I worked on the development of a so-called variable flavor number scheme (VFNS) for deep-inelasic-scattering (DIS) predictions at
+I worked on the development of a so-called variable flavor number scheme (VFNS) for DIS predictions at
 next-to-next-to-next-to-leading order (N$^3$LO) in perturbation theory.
 This is needed to correctly consider the heavy quarks mass effects when computing theory predictions electron-proton scattering,
 whose understanding is crucial in PDFs fit.
@@ -164,7 +179,30 @@ a compiled package for all possible operative systems. \textcolor{red}{Parte un 
 
 During my Ph.D.\ I also had the opportunity to work on different side projects.
 
-\cite{laurenti2022approximating}
+One of these was the use of resummation results to approximate the missing higher orders for processes with colorless final states,
+like Higgs production and Drell-Yan.
+Indeed, one of the most common ways to estimate missing higher orders is with the use of scale, variations:
+in the physical cross sections some unphysical scale appear, whose particular choice doessn't have to affect the all-orders result.
+However, when truncating the series, a dependence appears.
+It means that, varying these scales, it is possible to estimate the size of the unknown higher orders.
+This procedure has some caveats: the result of the so-called scale variation has no probabilistic interpretation and the chioce of
+the central scale as well as the size of the variation are totally arbitrary.
+An alternative way of estimate (or approximate) the missing higher orders is using resummation: given that the resummed expressions
+contains to all-orders the informations on the variious kinematic limits that appear in the fixed order calculations, it is possible
+to combine such limits to approximate the unknown higher order terms.
+This has been done for Higgs production, yelding resonable predictions, while for Drell-Yan it is still a work in progress.
+This work was presented in~\cite{laurenti2022approximating}.
+In this context I had the chance to deepen my understanding of resummation, and in particular threshold and small-$p_T$ resummations.
+
+\section{Other interests}
+
+As a member of the NNPDF collaboration, that uses neural networks to extract PDFs from experimental data, I have also a great interest
+in computational problems like machine learning an neural networks.
+Even though I didn't write directly the neural network fitting code (as mentioned before, I extended it to consider also the photon PDF)
+I have interest in this field, that is of great importance for the power of such tool and for spread that it had in the recent years
+also in accademia.
+
+% \newpage
 
 % Bibliography
 \bibliography{biblio}
