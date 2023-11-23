@@ -57,7 +57,7 @@
 
 \makecvtitle
 
-Starting with my master thesis and then with my Ph.D.\ my research focused on phenomenological aspects of high energy physics (HEP)
+Starting with my master thesis and then during my Ph.D.\ my research focused on phenomenological aspects of high energy physics (HEP)
 and in particular on the theory describing strong interactions, i.e.\ Quantum Chromodynamics (QCD).
 I am involved in developing methods and computational tools to provide high precision theoretical predictions in HEP.
 This is of fundamental importance since with the start of the high-luminosity era at the LHC, experimental measurements will increase
@@ -68,7 +68,7 @@ In this context, a building block for the theory predictions are the parton dist
 As these functions play a crucial role in computing every hadronic observable, their extraction from
 experimental data must be carried out with high precision.
 To achieve this goal, the methodological and computational techniques employed in their determination play a fundamental role. 
-Another fundamental aspect in PDFs extraction, is the theoretical description of deep-inelastic-scattering (DIS) data,
+Another essential aspect in PDFs extraction, is the theoretical description of deep-inelastic-scattering (DIS) data,
 that imposes a very strong constraint on the PDF.
 
 My research covered both these aspects.
@@ -80,8 +80,7 @@ On the other hand, I worked to develope a new scheme designed to increase the th
 \section{Construction of an N$^3$LO DIS scheme}
 
 During my Master Thesis, under the supervision of Dr.\ Marco Bonvini and in collaboration with another Master student,
-I worked on the development of a so-called variable flavor number scheme (VFNS) for DIS predictions at
-next-to-next-to-next-to-leading order (N$^3$LO) in perturbation theory.
+I worked on the development of a so-called variable flavor number scheme (VFNS) for DIS predictions.
 This is needed to correctly consider the heavy quarks mass effects when computing theory predictions electron-proton scattering,
 whose understanding is crucial in PDFs fit.
 Different proposal exist in the literature and they are all equivalent at all order in perturbation theory but differ at any given
@@ -91,7 +90,9 @@ Instead, our construction takes into account the fact that the heavy quark PDFs 
 perturbatively and therefore have to be considered of $\mathcal{O}(\alpha_s)$ (this is true in the case in which intrinsic components are neglected, while in the case in which they are not the scheme will
 have to be modified disentangling the intrinsic part from the one perturbatively generated).
 
-Currently, the ingredients needed for such a construction are completely known up to NNLO in perturbation theory, while at N$^3$LO
+We developed it up to next-to-next-to-leading order (NNLO) in perturbation theory, where all the needed ingredients are known, 
+but we extended it at N$^3$LO using approximate results for the unknown terms.
+Indeed, the ingredients needed for such a construction are completely known up to NNLO, while at N$^3$LO
 there are still some missing informations.
 Even though I was also involved in the construction of the scheme, the bulk of the work I did during my Master thesis was to
 construct an approximation of the unknown terms of the N$^3$LO partonic cross section for DIS (the so-called coefficient functions) by
@@ -118,12 +119,6 @@ Then a \texttt{Python} code, \url{https://github.com/andreab1997/DIS_TP}, whose 
 compute the theory predictions with our scheme.
 
 Regarding this work, a publication is in preparation.
-
-% This is of great importance in phenomenological studies of DIS, that are crucial for the extraction of PDFs from experimental data.
-% Indeed, in DIS, contrary to proton-proton collision, involve only one proton and therefore depend only on one PDF.
-% For this reason they provide a very stong contraint on the fit.
-% It follows that a very precise theoretical understanding of DIS is fundamental for the fits of PDF, which enter in the theory predictions
-% for every process in hadronic collisions.
 
 \section{PDFs fit}
 
