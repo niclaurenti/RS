@@ -62,8 +62,8 @@ In this context, a building block for the theory predictions are the parton dist
 As these functions play a crucial role in computing every hadronic observable, their extraction from
 experimental data must be carried out with high precision.
 To achieve this goal, the methodological and computational techniques employed in their determination play a fundamental role. 
-Another essential aspect in PDFs extraction is the theoretical description of deep-inelastic-scattering (DIS) data (an alectron scattering off
-a proton), that imposes a very strong constraint on the PDF.
+Another essential aspect in PDFs extraction is the theoretical description of deep-inelastic-scattering (DIS) data (i.e.\ electron-proton
+scattering), since it imposes a very strong constraint on the PDFs fit.
 
 My research covered both these aspects.
 On one hand I worked as a member of the NNPDF collaboration both on the theory side and as a developer of the NNPDF code to provide
@@ -79,7 +79,7 @@ This is needed to correctly consider the heavy quarks mass effects when computin
 whose understanding is crucial in PDFs fit.
 Different proposal exist in the literature and they are all equivalent at all order in perturbation theory but differ at any given
 order in the way the different ingredients are combined.
-What is crucial to discuss is that all of these schemes consider the heavy quark PDF of $\mathcal{O}(\alpha_s^0)$.
+What is fundamental to discuss is that all of these schemes consider the heavy quark PDF of $\mathcal{O}(\alpha_s^0)$.
 Instead, our construction takes into account the fact that the heavy quark PDFs are generated
 perturbatively and therefore have to be considered of $\mathcal{O}(\alpha_s)$ (this is true in the case in which intrinsic components
 are neglected, while in the case in which they are considered, the scheme will
@@ -98,11 +98,12 @@ In this way it was possible to construct a VFNS at approximate N$^3$LO.
 
 This result is important since it allows a better understanding of DIS theoretical predictions on two levels.
 Fist of all our VFNS will allow a more precise treatment of the heavy quark PDF.
-Moreover, the inclusion of the N$^3$LO corrections, even if in an approximate form, allows a better description of the DIS data
-and therefore it will increase the accuracy af the PDFs fits, that are fundamental for every theory prediction in hadronic collisions.
+Moreover, the inclusion of the N$^3$LO corrections, even if in an approximate form, will increase the perturbative convergence of the series.
+Both points will allow a better description of the DIS data
+and therefore they will increase the accuracy af the PDFs fits, that are fundamental for every theory prediction in hadronic collisions.
 
 As a result of this work two codes where written to produce the results.
-Both of them are now public and open source.
+Both of them are now public.
 The first one, \url{https://github.com/niclaurenti/adani}, is a \texttt{C++} code 
 which computes the approximation of the heavy quark coefficient functions at N$^3$LO.
 The reason why the \texttt{C++} language was chosen is that in the N$^3$LO massive coefficient function there are some terms that are
@@ -110,7 +111,8 @@ exactly known but only in numerical form since they are obtained through the int
 splitting functions.
 Therefore, a compiled code was more suitable to handle the heavy integrals that need to be computed.
 
-The second is a \texttt{Python} code, \url{https://github.com/andreab1997/DIS_TP}, whose aim is to combine the different ingredients to actually
+The second is a \texttt{Python} code, \url{https://github.com/andreab1997/DIS_TP}, whose aim is to combine the different ingredients 
+(like the output of the first code) to actually
 compute the theory predictions with our scheme.
 
 Regarding this work, a publication is in preparation.
