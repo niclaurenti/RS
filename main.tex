@@ -25,6 +25,7 @@
 %\setlength{\hintscolumnwidth}{3cm}                % if you want to change the width of the column with the dates
 %\setlength{\makecvtitlenamewidth}{10cm}           % for the 'classic' style, if you want to force the width allocated to your name and avoid line breaks. be careful though, the length is normally calculated to avoid any overlap with your personal info; use this at your own typographical risks...
 % \setlength{\parindent}{1em}
+\usepackage{cite}
 
 % personal data
 \name{Niccol\`o}{Laurenti}
@@ -153,17 +154,17 @@ Since the structure functions themselves depend on the quarks and gluon PDFs, th
 In this context, I interfaced the \texttt{FiatLux} code, a public code written in \texttt{C++} that implements the LuxQED formula, with the NNPDF code.
 In this way the fitting code is able to include the photon contribution in photon initiated processes, DGLAP evolution and in momentum sum rules.
 
-A publication for this work in in preparation and preliminary results were presented in~\cite{LAURENTI2023}.
+A publication for this work in in preparation and preliminary results were presented in~Ref.\cite{LAURENTI2023}.
 
 I was also involved in the approximate N$^3$LO PDFs determination by NNPDF.
 Indeed, almost all the ingredients needed for a PDF fit are exactly known up to NNLO (this is precisely true only for DIS predictions, as I mentioned in the past section, but not for all the proton-proton
 collision processes whose data are included in the fit).
-The aim of this project was to include the N$^3$LO corrections, using the exact results when available and approximate ones
-for the missing terms.
+The aim of this project was to include the N$^3$LO corrections in DIS predictions and in PDFs evolution,
+using the exact results when available and approximate ones for the missing terms.
 I was mainly involved in the implementation of the approximate N$^3$LO massive DIS coefficient functions in the NNPDF code.
 In order to do it, I interfaced the code I discussed about in the past section with the NNPDF code.
-This involves some technical problems like the interface of a \texttt{C++} code with a \texttt{Python} one, or the distribution of
-a compiled package for all possible operative systems. \textcolor{red}{Parte un po' inutile}
+This involves some technical problems like the interface of a \texttt{C++} code with a \texttt{Python} one, and the distribution of
+a compiled package for all possible operative systems. %\textcolor{red}{Parte un po' inutile}
 
 
 \section{Side projects}
@@ -182,7 +183,7 @@ An alternative way of estimate (or approximate) the missing higher orders is usi
 contains to all-orders the informations on the variious kinematic limits that appear in the fixed order calculations, it is possible
 to combine such limits to approximate the unknown higher order terms.
 This has been done for Higgs production, yelding resonable predictions, while for Drell-Yan it is still a work in progress.
-This work was presented in~\cite{laurenti2022approximating}.
+This work was presented in~ Ref.\cite{laurenti2022approximating}.
 In this context I had the chance to deepen my understanding of resummation, and in particular threshold and small-$p_T$ resummations.
 
 \section{Other interests}
