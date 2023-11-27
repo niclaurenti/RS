@@ -160,7 +160,8 @@ Indeed, DIS predictions and DGLAP evolution are completely known at NNLO, while 
 (like the terms that I approximated during my Master thesis).
 The aim of this project was to include the N$^3$LO corrections in DIS predictions and in PDFs evolution,
 using the exact results when available and approximate ones for the missing terms.
-I was mainly involved in the implementation of the approximate N$^3$LO massive DIS coefficient functions in the NNPDF code.
+I was mainly involved in the implementation of the approximation for the N$^3$LO massive DIS coefficient functions, that I developed
+during my Master thesis, in the NNPDF code.
 In order to do it, I interfaced the code I discussed about in the past section with the NNPDF code.
 This involves some technical problems like the interface of a \texttt{C++} code with a \texttt{Python} one, and the distribution of
 a compiled package for all possible operative systems. %\textcolor{red}{Parte un po' inutile}
@@ -172,15 +173,16 @@ Also for this work a pubblication is in preparation.
 During my Ph.D.\ I also had the opportunity to work on different side projects.
 
 One of these was the use of resummation results to approximate the missing higher orders for processes with colorless final states,
-like Higgs production and Drell-Yan.
-One of the most common ways to estimate missing higher orders is with the use of the so-called scale variations:
-in the physical cross sections some unphysical scales appear, whose particular choice doesn't have to affect the all-orders result.
-However, when truncating the series, a dependence appears.
-It means that, varying these scales, it is possible to estimate the size of the unknown higher orders.
-This procedure has some caveats: the result of the scale variation has no probabilistic interpretation and the chioce of
-the central scale as well as the size of the variation are totally arbitrary.
-An alternative way of estimate (or approximate) the missing higher orders is using resummation: given that the resummed expressions
-contains to all-orders the informations on the variious kinematic limits that appear in the fixed order calculations, it is possible
+like Higgs production and Drell-Yan:
+% One of the most common ways to estimate missing higher orders is with the use of the so-called scale variations:
+% in the physical cross sections some unphysical scales appear, whose particular choice doesn't have to affect the all-orders result.
+% However, when truncating the series, a dependence appears.
+% It means that, varying these scales, it is possible to estimate the size of the unknown higher orders.
+% This procedure has some caveats: the result of the scale variation has no probabilistic interpretation and the chioce of
+% the central scale as well as the size of the variation are totally arbitrary.
+% An alternative way of estimate (or approximate) the missing higher orders is using resummation: 
+given that the resummed expressions
+contains to all-orders the informations on the various kinematic limits that appear in the fixed order calculations, it is possible
 to combine such limits to approximate the unknown higher order terms.
 This has been done for Higgs production, yelding resonable predictions, while for Drell-Yan it is still a work in progress.
 This work was presented in~ Ref.\cite{laurenti2022approximating}.
@@ -194,7 +196,10 @@ Even though I didn't write directly the neural network fitting code (as mentione
 I have interest in this field, that is of great importance for the power of such tool and for spread that it had in the recent years
 also in accademia.
 
-\newpage
+Even though I spent the most of my Ph.D.\ on the PDFs fits, I have also great interests in more theoretical problems in QCD,
+like resummation or fixed order calculation, that are needed in order to reach the percent accuracy in theoretical predictions.
+
+% \newpage
 
 % Bibliography
 \bibliography{biblio}
