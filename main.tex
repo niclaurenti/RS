@@ -82,12 +82,12 @@ Different proposal exist in the literature and they are all equivalent at all or
 order in the way the different ingredients are combined.
 What is fundamental to discuss is that all of these schemes consider the heavy quark PDF of $\mathcal{O}(\alpha_s^0)$.
 Instead, our construction takes into account the fact that the heavy quark PDFs are generated
-perturbatively and therefore have to be considered of $\mathcal{O}(\alpha_s)$ (this is true in the case in which intrinsic components
+perturbatively and therefore they are accounted as $\mathcal{O}(\alpha_s)$ (this is true in the case in which intrinsic components
 are neglected, while in the case in which they are considered, the scheme will
 have to be modified disentangling the intrinsic part from the perturbatively generated one).
 
 We developed it up to next-to-next-to-leading order (NNLO) in perturbation theory, where all the needed ingredients are known.
-Moreover, we extended it at N$^3$LO using approximate results for the unknown terms.
+Moreover, we extended it to N$^3$LO using approximate results for the unknown terms.
 Indeed, the ingredients needed for such a construction are completely known up to NNLO, while at N$^3$LO
 there are still some missing informations.
 Even though I was also involved in the construction of the scheme, the bulk of the work I did during my Master thesis was to
@@ -104,7 +104,7 @@ Both points will allow a better description of the DIS data
 and therefore they will increase the accuracy af the PDFs fits.
 %, that are fundamental for every theory prediction in hadronic collisions.
 
-As a result of this work two codes where written to produce the results.
+As a result of this work two codes were written to produce the results.
 Both of them are now public.
 The first one, \url{https://github.com/niclaurenti/adani}, is a \texttt{C++} code 
 which computes the approximation of the heavy quark coefficient functions at N$^3$LO.
@@ -137,7 +137,7 @@ In order to achieve it, different things had to be implemented in different code
 The first step is the implementation of QED corrections to the PDFs evolution equations, i.e.\ the DGLAP equations.
 They are a system of integro-differential equations, whose solution is highly non-trivial and therefore can be obtained only numerically.
 The solution of DGLAP equations, in presence of QED effects, has been implemented in the public code \texttt{EKO}
-(\url{https://github.com/NNPDF/eko}), a code written in \texttt{Python} that computes the solution of the DGLAP equation with the
+(\url{https://github.com/NNPDF/eko}), a code written in \texttt{Python} that solves the DGLAP equation with the
 technique of the Mellin transform.
 Before I joined the NNPDF collaboration, \texttt{EKO} could handle only the pure QCD evolution, but I extended it to consider also QED corrections.
 This passes through various steps: find a PDFs basis that maximally decouple the system in presence of QED effects, write the DGLAP equations in this basis,
@@ -145,20 +145,20 @@ compute the Mellin transform of the known QED corrections of the splitting funct
 (i.e.\ the $\mathcal{O}(\alpha)$, $\mathcal{O}(\alpha \alpha_s)$ and $\mathcal{O}(\alpha^2)$) and analytically continue them in the complex Mellin space,
 find a suitable numerical solution of the system in Mellin space and in the end compute the inverse Mellin transform.
 
-The second step has been the extension of the NNPDF fitting code (\url{https://github.com/NNPDF/nnpdf}) to consider also
+The second step of the project has been the extension of the NNPDF fitting code (\url{https://github.com/NNPDF/nnpdf}) to consider also
 a photon PDF.
-Indeed, once we consider QED effects we allow photons emissions from the quarks inside the proton and therefore we have to consider also a photon PDF.
+Indeed, once we consider QED effects, we allow photons emissions from the quarks inside the proton and therefore we have to consider also a photon PDF.
 This is obtained through the LuxQED method~\cite{Manohar:2016nzj, Manohar:2017eqh}: with this approach the photon PDF is linked through
 a perturbative calculation to the DIS structure functions.
 Since the structure functions themselves depend on the quarks and gluon PDFs, the LuxQED method links the photon PDF to the ``QCD'' PDFs.
 In order to implement this method in the fitting framework, I interfaced the \texttt{FiatLux} code, a public code written in \texttt{C++} that implements the LuxQED formula, with the NNPDF code.
-In this way the fitting code is able to include the photon contribution in photon initiated processes, DGLAP evolution and in the momentum sum rules.
+In this way the fitting code is able to consider also the photon PDF: this one enters in the fit in photon initiated processes, in the DGLAP evolution and in the momentum sum rules.
 A publication for this work is in preparation and preliminary results were presented in~Ref.\cite{LAURENTI2023}.
 
 I was also involved in the approximate N$^3$LO PDFs determination by NNPDF.
 Indeed, DIS predictions and DGLAP evolution are completely known at NNLO, while at N$^3$LO there are still some missing informations
 (like the terms that I approximated during my Master thesis).
-The aim of this project was to include the N$^3$LO corrections in DIS predictions and in PDFs evolution,
+The aim of this project is to include the N$^3$LO corrections in DIS predictions and in PDFs evolution,
 using the exact results when available and approximate ones for the missing terms.
 I was mainly involved in the implementation of the approximation for the N$^3$LO massive DIS coefficient functions, that I developed
 during my Master thesis, in the NNPDF code.
