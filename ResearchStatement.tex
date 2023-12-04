@@ -66,8 +66,8 @@ I am involved in developing methods and computational tools to provide high prec
 % Another essential aspect in PDFs extraction is the theoretical description of deep-inelastic-scattering (DIS) data (i.e.\ electron-proton
 % scattering), since it imposes a very strong constraint on the PDF fits.
 
-My research covered mainly the topics of PDF fits and theory predictions in deep-inelastic-scattering (DIS):
-on one hand I worked as a member of the NNPDF collaboration and as a developer of the NNPDF code to include
+My research covered mainly the topics of PDF fits and theory predictions in deep-inelastic-scattering (DIS).
+Indeed, on one hand I worked as a member of the NNPDF collaboration and as a developer of the NNPDF code to include
 Quantum Electrodynamics (QED) effects in PDF fits.
 On the other hand, I worked to develope a new scheme designed to increase the precision of DIS predictions.
 
@@ -119,10 +119,10 @@ During my Ph.D.\ my main project has been the inclusion of QED effects in PDF fi
 The goal of the work was to produce the QED fit of the NNPDF4.0 series that had to replace the previous QED fit from NNPDF, i.e.\ the NNPDF3.1QED PDF set.
 In order to achieve it, different things had to be implemented in different codes.
 
-The first step is the implementation of QED corrections to the PDFs evolution equations, i.e.\ the DGLAP equations.
+The first step has been the implementation of QED corrections to the PDFs evolution equations, i.e.\ the DGLAP equations.
 % They are a system of integro-differential equations, whose solution is highly non-trivial and therefore can be obtained only numerically.
-They have been implemented in the public code \href{https://github.com/NNPDF/eko}{\texttt{EKO}}.
-Before I joined the NNPDF collaboration, \texttt{EKO} could handle only the pure QCD evolution, but I extended it to consider also QED corrections.
+They have been implemented in the public code \href{https://github.com/NNPDF/eko}{\texttt{EKO}}:
+before I joined the NNPDF collaboration, \texttt{EKO} could handle only the pure QCD evolution, but I extended it to consider also QED corrections.
 % This passes through various steps: find a PDFs basis that maximally decouple the system in presence of QED effects, write the DGLAP equations in this basis,
 % compute the Mellin transform of the known QED corrections of the splitting functions
 % (i.e.\ the $\mathcal{O}(\alpha)$, $\mathcal{O}(\alpha \alpha_s)$ and $\mathcal{O}(\alpha^2)$) and analytically continue them in the complex Mellin space,
@@ -141,20 +141,19 @@ A publication for this work is in preparation and preliminary results were prese
 I was also involved in the approximate N$^3$LO PDFs determination by NNPDF.
 % Indeed, DIS predictions and DGLAP evolution are completely known at NNLO, while at N$^3$LO there are still some missing informations
 % (like the terms that I approximated during my Master thesis).
-The aim of this project is to include the N$^3$LO corrections in DIS predictions and in PDFs evolution,
+The aim of this project was to include the N$^3$LO corrections in DIS predictions and in PDFs evolution,
 using the exact results when available and approximate ones for the missing terms.
 I was mainly involved in the implementation of the approximation for the N$^3$LO massive DIS coefficient functions, that I developed
 during my Master thesis, in the NNPDF code.
 % In order to do it, I interfaced the code I discussed about in the past section with the NNPDF code.
 % This involves some technical problems like the interface of a \texttt{C++} code with a \texttt{Python} one, and the distribution of
 % a compiled package for all possible operative systems.
-Also for this work a pubblication is in preparation.
-
+Also for this work a publication is in preparation.
 
 \section{Side projects}
 
 During my Ph.D.\ I also had the opportunity to work on different side projects.
-
+%
 One of these was the use of resummation results to approximate the missing higher orders for processes with colorless final states,
 like Higgs production and Drell-Yan:
 % One of the most common ways to estimate missing higher orders is with the use of the so-called scale variations:
