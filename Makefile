@@ -1,4 +1,4 @@
 default:
-	pdflatex main.tex
-	bibtex main
-	pdflatex main.tex
+	pdflatex ResearchStatement.tex
+	bibtex ResearchStatement
+	pdflatex ResearchStatement.tex
