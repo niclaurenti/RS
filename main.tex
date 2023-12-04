@@ -53,118 +53,101 @@
 \makecvtitle
 
 Starting with my Master thesis and then during my Ph.D., my research focused on phenomenological aspects of high energy physics (HEP)
-and in particular on the theory describing strong interactions, i.e.\ Quantum Chromodynamics (QCD).
+and in particular on Quantum Chromodynamics (QCD).
 I am involved in developing methods and computational tools to provide high precision theoretical predictions in HEP.
-This is of fundamental importance since with the start of the high-luminosity era at the LHC, experimental measurements will highly 
-increase their precision.
-Therefore, to effectively compare theory with experiments, theoretical calculations must attain a precision on the order of percent.
+% This is of fundamental importance since with the start of the high-luminosity era at the LHC, experimental measurements will highly 
+% increase their precision.
+% Therefore, to effectively compare theory with experiments, theoretical calculations must attain a precision on the order of percent.
 
-In this context, a building block for the theory predictions are the parton distribution functions (PDFs).
-As these functions play a crucial role in computing every hadronic observable, their extraction from
-experimental data must be carried out with high precision.
-To achieve this goal, the methodological and computational techniques employed in their determination play a fundamental role. 
-Another essential aspect in PDFs extraction is the theoretical description of deep-inelastic-scattering (DIS) data (i.e.\ electron-proton
-scattering), since it imposes a very strong constraint on the PDFs fit.
+% In this context, a building block for the theory predictions are the parton distribution functions (PDFs).
+% As these functions play a crucial role in computing every hadronic observable, their extraction from
+% experimental data must be carried out with high precision.
+% To achieve this goal, the methodological and computational techniques employed in their determination play a fundamental role. 
+% Another essential aspect in PDFs extraction is the theoretical description of deep-inelastic-scattering (DIS) data (i.e.\ electron-proton
+% scattering), since it imposes a very strong constraint on the PDF fits.
 
-My research covered both these aspects.
-On one hand I worked as a member of the NNPDF collaboration both on the theory side and as a developer of the NNPDF code to provide
-computational tools capable to determine PDFs with a percent accuracy.
-On the other hand, I worked to develope a new scheme designed to increase the theoretical comprehension of deep inelastic scattering
-(DIS) predictions, thereby contributing to a more refined determination of PDFs.
+My research covered mainly the topics of PDF fits and theory predictions in deep-inelastic-scattering (DIS):
+on one hand I worked as a member of the NNPDF collaboration and as a developer of the NNPDF code to include
+Quantum Electrodynamics (QED) effects in PDF fits.
+On the other hand, I worked to develope a new scheme designed to increase the precision of DIS predictions.
+
+I'm interested also in computational problems like machine learning but also in more theoretical ones related to phenomenology in 
+HEP like resummation or fixed order calculations.
 
 \section{Construction of an N$^3$LO DIS scheme}
 
-During my Master Thesis, under the supervision of Dr.\ Marco Bonvini and in collaboration with another Master student,
-I worked on the development of a so-called variable flavor number scheme (VFNS) for DIS predictions.
-This is needed to correctly consider the heavy quarks mass effects when computing theory predictions in DIS,
-whose understanding is crucial in PDFs fit.
-Different proposal exist in the literature and they are all equivalent at all order in perturbation theory but differ at any given
-order in the way the different ingredients are combined.
-What is fundamental to discuss is that all of these schemes consider the heavy quark PDF of $\mathcal{O}(\alpha_s^0)$.
-Instead, our construction takes into account the fact that the heavy quark PDFs are generated
-perturbatively and therefore they are accounted as $\mathcal{O}(\alpha_s)$ (this is true in the case in which intrinsic components
-are neglected, while in the case in which they are considered, the scheme will
-have to be modified disentangling the intrinsic part from the perturbatively generated one).
-
+During my Master Thesis I worked on the development of a so-called variable flavor number scheme (VFNS) 
+for DIS predictions.
+%
+% This is needed to correctly consider the heavy quarks mass effects when computing theory predictions in DIS,
+% whose understanding is crucial in PDF fits.
+%
+This construction, unlike the ones that are available in the literature, takes into account the fact that the heavy quark PDF is generated
+perturbatively and therefore must be accounted as $\mathcal{O}(\alpha_s)$.
+%
 We developed it up to next-to-next-to-leading order (NNLO) in perturbation theory, where all the needed ingredients are known.
 Moreover, we extended it to N$^3$LO using approximate results for the unknown terms.
-Indeed, the ingredients needed for such a construction are completely known up to NNLO, while at N$^3$LO
-there are still some missing informations.
-Even though I was also involved in the construction of the scheme, the bulk of the work I did during my Master thesis was to
+Even though I was also involved in the construction of the scheme, the bulk of the work I did was to
 construct an approximation of the unknown terms of the N$^3$LO partonic cross section for DIS (the so-called coefficient functions) by
 combining some known limits.
-In this way it was possible to construct a VFNS at approximate N$^3$LO.
 
-% \textcolor{red}{Ho approfondito bla bla bla}
-
-This result is important since it allows a better understanding of DIS theoretical predictions on two levels.
-Fist of all our VFNS will allow a more precise treatment of the heavy quark PDF.
-Moreover, the inclusion of the N$^3$LO corrections, even if in an approximate form, will increase the perturbative convergence of the series.
-Both points will allow a better description of the DIS data
-and therefore they will increase the accuracy af the PDFs fits.
-%, that are fundamental for every theory prediction in hadronic collisions.
+% This result is important since it allows a better understanding of DIS theoretical predictions on two levels.
+% Fist of all our VFNS will allow a more precise treatment of the heavy quark PDF.
+% Moreover, the inclusion of the N$^3$LO corrections, even if in an approximate form, will increase the perturbative convergence of the series.
+% Both points will allow a better description of the DIS data
+% and therefore they will increase the accuracy af the PDF fits.
 
 As a result of this work two codes were written to produce the results.
 Both of them are now public.
-The first one, \url{https://github.com/niclaurenti/adani}, is a \texttt{C++} code 
-which computes the approximation of the heavy quark coefficient functions at N$^3$LO.
-The reason why the \texttt{C++} language was chosen is that in the N$^3$LO massive coefficient function there are some terms that are
-exactly known but only in numerical form since they are obtained through the integration of the lowest order coefficient functions and
-splitting functions.
-Therefore, a compiled code was more suitable to handle the heavy integrals that need to be computed.
-
-The second is a \texttt{Python} code, \url{https://github.com/andreab1997/DIS_TP}, whose aim is to combine the different ingredients 
+The first one, \href{https://github.com/niclaurenti/adani}{\texttt{Adani}}, is a \texttt{C++} code 
+which computes both the approximation of the unknown terms and the exact value of the known ones
+for the massive coefficient functions at N$^3$LO.
+% The reason why the \texttt{C++} language was chosen is that in the N$^3$LO massive coefficient function there are some terms that are
+% exactly known but only in numerical form since they are obtained through the integration of the lowest order coefficient functions and
+% splitting functions.
+% Therefore, a compiled code was more suitable to handle the heavy integrals that need to be computed.
+%
+The second one, \href{https://github.com/andreab1997/DIS_TP}{\texttt{DIS\_TP}}, is a \texttt{Python} code whose aim is to combine the different ingredients 
 (like the output of the first code) to actually
 compute the theory predictions with our scheme.
-
+%
 Regarding this work, a publication is in preparation.
 
-\section{PDFs fit}
+\section{PDF fit}
 
-During my Ph.D.\ I continued working in the field of phenomenology in HEP under the supervision of Prof.\ Stefano Forte.
-In particular I focused on the topic of PDFs fits: PDFs are objects that link the hadronic cross sections,
-that are what is actually observed experimentally, to partonic cross sections, that are what is computed theoretically.
-Being non-perturbative objects, the PDFs cannot be computed in perturbation theory but they must be fitted from data.
-Their extraction is a fundamental step in the computation of theory predictions in hadronic collisions, like the ones happening 
-at the LHC, since the enter in the computation of every observable.
-I delved into this subject when I joined the NNPDF collaboration, where I had the opportunity to work both on the theoretical and on the
-computational aspects.
-
-My main project has been the inclusion of Quantum Electrodynamics (QED) effects in PDFs fit.
+During my Ph.D.\ my main project has been the inclusion of QED effects in PDF fits.
 The goal of the work was to produce the QED fit of the NNPDF4.0 series that had to replace the previous QED fit from NNPDF, i.e.\ the NNPDF3.1QED PDF set.
 In order to achieve it, different things had to be implemented in different codes.
 
 The first step is the implementation of QED corrections to the PDFs evolution equations, i.e.\ the DGLAP equations.
-They are a system of integro-differential equations, whose solution is highly non-trivial and therefore can be obtained only numerically.
-The solution of DGLAP equations, in presence of QED effects, has been implemented in the public code \texttt{EKO}
-(\url{https://github.com/NNPDF/eko}), a code written in \texttt{Python} that solves the DGLAP equation with the
-technique of the Mellin transform.
+% They are a system of integro-differential equations, whose solution is highly non-trivial and therefore can be obtained only numerically.
+They have been implemented in the public code \href{https://github.com/NNPDF/eko}{\texttt{EKO}}.
 Before I joined the NNPDF collaboration, \texttt{EKO} could handle only the pure QCD evolution, but I extended it to consider also QED corrections.
-This passes through various steps: find a PDFs basis that maximally decouple the system in presence of QED effects, write the DGLAP equations in this basis,
-compute the Mellin transform of the known QED corrections of the splitting functions
-(i.e.\ the $\mathcal{O}(\alpha)$, $\mathcal{O}(\alpha \alpha_s)$ and $\mathcal{O}(\alpha^2)$) and analytically continue them in the complex Mellin space,
-find a suitable numerical solution of the system in Mellin space and in the end compute the inverse Mellin transform.
-
-The second step of the project has been the extension of the NNPDF fitting code (\url{https://github.com/NNPDF/nnpdf}) to consider also
+% This passes through various steps: find a PDFs basis that maximally decouple the system in presence of QED effects, write the DGLAP equations in this basis,
+% compute the Mellin transform of the known QED corrections of the splitting functions
+% (i.e.\ the $\mathcal{O}(\alpha)$, $\mathcal{O}(\alpha \alpha_s)$ and $\mathcal{O}(\alpha^2)$) and analytically continue them in the complex Mellin space,
+% find a suitable numerical solution of the system in Mellin space and in the end compute the inverse Mellin transform.
+%
+The second step has been the extension of the \href{https://github.com/NNPDF/nnpdf}{NNPDF fitting code} to consider also
 a photon PDF.
-Indeed, once we consider QED effects, we allow photons emissions from the quarks inside the proton and therefore we have to consider also a photon PDF.
+% Indeed, once we consider QED effects, we allow photons emissions from the quarks inside the proton and therefore we have to consider also a photon PDF.
 This is obtained through the LuxQED method~\cite{Manohar:2016nzj, Manohar:2017eqh}: with this approach the photon PDF is linked through
-a perturbative calculation to the DIS structure functions.
-Since the structure functions themselves depend on the quarks and gluon PDFs, the LuxQED method links the photon PDF to the ``QCD'' PDFs.
+a perturbative calculation to the quark and gluon PDFs.
+% Since the structure functions themselves depend on the quarks and gluon PDFs, the LuxQED method links the photon PDF to the ``QCD'' PDFs.
 In order to implement this method in the fitting framework, I interfaced the \texttt{FiatLux} code, a public code written in \texttt{C++} that implements the LuxQED formula, with the NNPDF code.
-In this way the fitting code is able to consider also the photon PDF: this one enters in the fit in photon initiated processes, in the DGLAP evolution and in the momentum sum rules.
+% In this way the fitting code is able to consider also the photon PDF: this one enters in the fit in photon initiated processes, in the DGLAP evolution and in the momentum sum rules.
 A publication for this work is in preparation and preliminary results were presented in~Ref.\cite{LAURENTI2023}.
 
 I was also involved in the approximate N$^3$LO PDFs determination by NNPDF.
-Indeed, DIS predictions and DGLAP evolution are completely known at NNLO, while at N$^3$LO there are still some missing informations
-(like the terms that I approximated during my Master thesis).
+% Indeed, DIS predictions and DGLAP evolution are completely known at NNLO, while at N$^3$LO there are still some missing informations
+% (like the terms that I approximated during my Master thesis).
 The aim of this project is to include the N$^3$LO corrections in DIS predictions and in PDFs evolution,
 using the exact results when available and approximate ones for the missing terms.
 I was mainly involved in the implementation of the approximation for the N$^3$LO massive DIS coefficient functions, that I developed
 during my Master thesis, in the NNPDF code.
-In order to do it, I interfaced the code I discussed about in the past section with the NNPDF code.
-This involves some technical problems like the interface of a \texttt{C++} code with a \texttt{Python} one, and the distribution of
-a compiled package for all possible operative systems. %\textcolor{red}{Parte un po' inutile}
+% In order to do it, I interfaced the code I discussed about in the past section with the NNPDF code.
+% This involves some technical problems like the interface of a \texttt{C++} code with a \texttt{Python} one, and the distribution of
+% a compiled package for all possible operative systems.
 Also for this work a pubblication is in preparation.
 
 
@@ -190,13 +173,13 @@ In this context I had the chance to deepen my understanding of resummation, and 
 
 \section{Other interests}
 
-As a member of the NNPDF collaboration, that uses neural networks to extract PDFs from experimental data, I have also a great interest
+As a member of the NNPDF collaboration, I have great interest
 in computational problems like machine learning and neural networks.
 Even though I didn't write directly the neural network fitting code (as mentioned before, I extended it to consider also the photon PDF)
 I have interest in this field, that is of great importance for the power of such tool and for spread that it had in the recent years
 also in accademia.
 
-Even though I spent the most of my Ph.D.\ on the PDFs fits, I have also great interests in more theoretical topics of QCD,
+Despite I spent the most of my Ph.D.\ on the PDF fits, I have also great interests in more theoretical topics of phenomenology in HEP,
 like resummation or fixed order calculation, that are needed in order to reach the percent accuracy in theoretical predictions.
 
 % \newpage
